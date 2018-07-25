@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Flashcards18</title>
+    <title>Flashcards</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <section id="container">
+      
+      <header class="clearfix">
+        <h1><%= link_to "Flashcards", root_path %></h1>
+        <ul class="navigation-links">
+          <li><%= link_to "All cards", cards_path %></li>
+          <li><%= link_to "Add card", new_card_path %></li>
+        </ul>
+      </header>
+     
+    </section>
     <%= yield %>
   </body>
 </html>

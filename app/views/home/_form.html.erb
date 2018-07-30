@@ -1,0 +1,15 @@
+<%= form_tag check_answer_path, remote: true do %>
+  <p><%= @card.original_text %>
+  <div>
+    <%= @card.translated_text %>
+  </div>
+  <p>
+  <div>
+    <%= @card.review_date %>
+  </div>
+  <p>
+  <div>
+    <%= text_field_tag 'answer', nil %>
+    <%= submit_tag "Check answer", method: 'check_answer' %>
+  </div>
+<% end %>

@@ -72,7 +72,7 @@ Rails.application.config.sorcery.configure do |config|
   # What providers are supported by this app, i.e. [:twitter, :facebook, :github, :linkedin, :xing, :google, :liveid, :salesforce, :slack] .
   # Default: `[]`
   #
-   config.external_providers = [:github]
+  config.external_providers = [:github]
 
   # You can change it by your local ca_file. i.e. '/etc/pki/tls/certs/ca-bundle.crt'
   # Path to ca_file. By default use a internal ca-bundle.crt.
@@ -119,10 +119,10 @@ Rails.application.config.sorcery.configure do |config|
   # config.facebook.api_version = "v2.3"
   # config.facebook.parse = :json
   #
-   config.github.key = "86454f4a2358174bb119"
-   config.github.secret = "7aa6cd26432674fa7e5529b8d3497d316373f31b"
-   config.github.callback_url = "https://0.0.0.0:3000/oauth/callback?provider=github"
-   config.github.user_info_mapping = {:email => "name"}
+  config.github.key = '86454f4a2358174bb119'
+  config.github.secret = 'd6e42ef8ea640eb52b020f4856c09ec38840220a'
+  config.github.callback_url = 'https://0.0.0.0:3000/oauth/callback?provider=github'
+  config.github.user_info_mapping = { email: 'name' }
   # config.github.scope = ""
   #
   # config.paypal.key = ""
@@ -366,7 +366,7 @@ Rails.application.config.sorcery.configure do |config|
     # Default: `5 * 60`
     #
     # user.reset_password_time_between_emails =
-    
+
     # access counter to a reset password page attribute name
     # Default: `:access_count_to_reset_password_page`
     #
@@ -378,30 +378,25 @@ Rails.application.config.sorcery.configure do |config|
     #
     # user.magic_login_token_attribute_name =
 
-
     # expires at attribute name.
     # Default: `:magic_login_token_expires_at`
     #
     # user.magic_login_token_expires_at_attribute_name =
-
 
     # when was email sent, used for hammering protection.
     # Default: `:magic_login_email_sent_at`
     #
     # user.magic_login_email_sent_at_attribute_name =
 
-
     # mailer class. Needed.
     # Default: `nil`
     #
     # user.magic_login_mailer_class =
 
-
     # magic login email method on your mailer class.
     # Default: `:magic_login_email`
     #
     # user.magic_login_email_method_name =
-
 
     # when true sorcery will not automatically
     # email magic login details and allow you to
@@ -410,12 +405,10 @@ Rails.application.config.sorcery.configure do |config|
     #
     # user.magic_login_mailer_disabled =
 
-
     # how many seconds before the request expires. nil for never expires.
     # Default: `nil`
     #
     # user.magic_login_expiration_period =
-
 
     # hammering protection, how long in seconds to wait before allowing another email to be sent.
     # Default: `5 * 60`
@@ -489,7 +482,7 @@ Rails.application.config.sorcery.configure do |config|
     # Class which holds the various external provider data for this user.
     # Default: `nil`
     #
-     user.authentications_class = Authentication
+    user.authentications_class = Authentication
 
     # User's identifier in authentications class.
     # Default: `:user_id`

@@ -1,5 +1,8 @@
-<%= form_tag check_answer_path, remote: true do %>
-  <p><%= @card.original_text %>
+<%= form_for @card, url: card_check_answer_path(@card), method: :post do |card| %>
+  <div>
+    <%= @card.original_text %>
+  </div>
+  <p>
   <div>
     <%= @card.translated_text %>
   </div>

@@ -4,7 +4,6 @@ class Card < ApplicationRecord
   belongs_to :user, optional: true
   scope :unreviewed, -> { where('review_date <= ?', Date.today) }
 
-
   def same_words
     if original_text.casecmp(translated_text.downcase).zero?
       errors.add(:translated_text, 'Translated text cannot equal original text')

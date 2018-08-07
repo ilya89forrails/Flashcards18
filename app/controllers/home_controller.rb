@@ -1,13 +1,11 @@
 class HomeController < ApplicationController
   def index
-    if true # current_user
+    if current_user
       @card = Card.get_random
-        # @card = current_user.cards.get_random
       end
     end
 
   def check_answer
-    #	binding.pry
     @card = Card.find(params[:card_id])
     answer = params[:answer]
     if answer == @card.original_text
@@ -17,7 +15,6 @@ class HomeController < ApplicationController
     else
       result = "Wrong! '#{@card.translated_text}' was translated as '#{@card.original_text}'"
     end
-    # flash[:notice] = result
     redirect_to root_path
   end
 end

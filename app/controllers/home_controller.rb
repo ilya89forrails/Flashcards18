@@ -2,13 +2,12 @@ class HomeController < ApplicationController
   def index
     if current_user
       @card = Card.get_random
-      end
     end
+  end
 
   def check_answer
     @card = Card.find(params[:card_id])
-    answer = params[:answer]
-    if answer == @card.original_text
+    if params[:answer] == @card.original_text
       @card.review_date = Date.today + 3.days
       result = 'You are right!'
       @card.save

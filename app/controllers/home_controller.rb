@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
     if current_user
-      @card = Card.get_random
+      @card = Card.random
     end
   end
 

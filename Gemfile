@@ -44,6 +44,10 @@ group :development, :test do
   gem 'pg'
   gem 'simple_form'
   gem 'pry-rails'
+  gem 'carrierwave', '~> 1.0'
+  gem 'mini_magick'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_bot_rails'
 end
 
 group :development do

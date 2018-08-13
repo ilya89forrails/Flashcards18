@@ -11,6 +11,7 @@
     <%= @card.review_date %>
   </div>
   <p>
+  <p><%= image_tag @card.pic_url(:thumb).to_s %>
   <div>
     <%= text_field_tag 'answer', nil %>
     <%= submit_tag "Check answer", method: 'check_answer' %>

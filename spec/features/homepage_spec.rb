@@ -19,9 +19,10 @@ describe 'home page specs', type: :feature do
     click_button('Login')
     visit root_path
 
-     fill_in('answer', with: 'schwarz')
-     click_button 'Check answer'
-     expect(page).to have_content 'You are right!'
+    fill_in('answer', with: 'schwarz')
 
+    click_button 'Check answer'
+
+    expect(page).to have_content 'You are right!'
   end
 end

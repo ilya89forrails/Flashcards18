@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe Card do
-
   it 'pass validation - Card' do
     card = Card.new(original_text: 'schwarz', translated_text: 'black', review_date: Date.today)
     expect(card).to be_valid

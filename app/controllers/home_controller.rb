@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
     if current_user
-      @card = Card.random
+      @card = Card.random if Card.unreviewed.present?
     end
   end
 
@@ -14,6 +14,6 @@ class HomeController < ApplicationController
     else
       result = "Wrong! '#{@card.translated_text}' was translated as '#{@card.original_text}'"
     end
-    redirect_to root_path
+    redirect_to(root_path, notice: result)
   end
 end

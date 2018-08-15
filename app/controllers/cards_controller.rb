@@ -1,5 +1,4 @@
 class CardsController < ApplicationController
-
   before_action :set_card, only: [:edit, :show, :update, :destroy]
 
   def index
@@ -23,6 +22,7 @@ class CardsController < ApplicationController
       redirect_to cards_path
     else
       render 'new'
+    end
   end
 
   def update
@@ -38,11 +38,10 @@ class CardsController < ApplicationController
   private
 
   def card_params
-    params.require(:card).permit(:original_text, :translated_text, :review_date)
+    params.require(:card).permit(:original_text, :translated_text, :review_date, :pic)
   end
 
   def set_card
     @card = Card.find(params[:id])
   end
-
 end

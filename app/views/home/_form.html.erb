@@ -1,0 +1,19 @@
+<%= form_for @card, url: card_check_answer_path(@card), method: :post do |card| %>
+  <div>
+    <%= @card.original_text %>
+  </div>
+  <p>
+  <div>
+    <%= @card.translated_text %>
+  </div>
+  <p>
+  <div>
+    <%= @card.review_date %>
+  </div>
+  <p>
+  <p><%= image_tag @card.pic_url(:thumb).to_s %>
+  <div>
+    <%= text_field_tag 'answer', nil %>
+    <%= submit_tag "Check answer", method: 'check_answer' %>
+  </div>
+<% end %>

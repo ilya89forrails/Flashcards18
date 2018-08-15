@@ -1,0 +1,8 @@
+<h1><%= @card.original_text %></h1>
+Original text: <%= @card.original_text %>
+Translated text: <%= @card.translated_text %>
+<%= image_tag @card.pic_url(:thumb).to_s %>
+Review date: <%= @card.review_date %>
+<%= link_to "Edit", edit_card_path(@card) %>
+<%= link_to "Delete", card_path(@card), :method => :delete, :confirm => "Are you sure?" %>
+<%= link_to "Back", user_path(current_user) %>

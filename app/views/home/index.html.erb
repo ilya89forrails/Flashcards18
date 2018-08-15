@@ -9,5 +9,13 @@
         World's best flashcard manager. 
       </p>
     </section>
+<b><font color="blue"><%= flash[:notice] %></font>
+<% if @card.present?  %>
+<div id="trainer">
+  <%= render partial: 'form' %>
+</div>
+<% elsif current_user.present? %>
+<p> No cards for today!
+<% end %> 
   </section>
 </body>

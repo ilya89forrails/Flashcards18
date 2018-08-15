@@ -17,6 +17,20 @@
           <li><%= link_to "All cards", cards_path %></li>
           <li><%= link_to "Add card", new_card_path %></li>
         </ul>
+        <div id="nav">
+    <% if current_user %>
+      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+      <%= link_to "Logout", :logout, method: :post %>
+    <% else %>
+      <%= link_to "Register", new_user_path %> |
+      <%= link_to "Login", :login %>
+      <%= link_to 'Login with Github', auth_at_provider_path(:provider => :github) %>
+    <% end %>
+  </div>
+  <div>
+    <p id="notice"><%= flash[:notice] %></p>
+    <p id="alert"><%= flash[:alert] %></p>
+  </div>
       </header>
      
     </section>

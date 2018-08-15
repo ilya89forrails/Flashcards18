@@ -3,7 +3,7 @@ class Card < ApplicationRecord
   validate :same_words, on: :create
   belongs_to :user, optional: true
   scope :unreviewed, -> { where('review_date <= ?', Date.today) }
-  scope :random_order, -> { unreviewed.order(Arel.sql('random()'))}
+  scope :random_order, -> { unreviewed.order(Arel.sql('random()')) }
   mount_uploader :pic, PicUploader
 
   def same_words

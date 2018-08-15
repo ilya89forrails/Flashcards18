@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
     if current_user
-      @card = Card.random if Card.unreviewed.present?
+      @card = Card.random
     end
   end
 

@@ -17,7 +17,7 @@ class CardsController < ApplicationController
 
   def create
     @card = Card.new(card_params)
-    @card.review_date = Date.today #+ 3.days
+    @card.review_date = Date.today + 3.days
     if @card.save
       redirect_to cards_path
     else

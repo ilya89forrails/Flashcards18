@@ -47,6 +47,9 @@ group :development, :test do
   gem 'mini_magick'
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_bot_rails'
+  gem 'damerau-levenshtein'
+  gem 'whenever', require: false
+  gem 'letter_opener'
 end
 
 group :development do
